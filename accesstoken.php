@@ -12,8 +12,8 @@ curl_setopt($curl, CURLOPT_HEADER, FALSE);
 curl_setopt($curl, CURLOPT_USERPWD, $consumerKey . ':' . $consumerSecret);
 $result = curl_exec($curl);
 $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-echo $result;
 
-//$result = json_decode($result);
-//$access_token = $result->access_token;
+
+$result = json_decode($result);
+$access_token = $result->access_token;
 curl_close($curl);
