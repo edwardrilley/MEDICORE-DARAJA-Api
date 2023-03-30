@@ -15,5 +15,5 @@ $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 
 $result = json_decode($result);
-$access_token = $result->access_token;
+echo $access_token = $result->access_token;
 curl_close($curl);
