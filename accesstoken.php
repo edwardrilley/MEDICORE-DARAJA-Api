@@ -14,9 +14,5 @@ $result = curl_exec($curl);
 $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 $result = json_decode($result);
-if (isset($result->access_token)) {
-    echo $access_token = $result->access_token;
-} else {
-    echo "Error: Failed to retrieve access token";
-}
+echo $access_token = $result->access_token;
 curl_close($curl);
