@@ -17,19 +17,9 @@ curl_setopt($curl, CURLOPT_USERPWD, $consumerKey . ':' . $consumerSecret);
 $result = curl_exec($curl);
 $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-if (!$result) {
-  die("Connection Failure");
-}
-
-$response = json_decode($result);
-
-if (isset($response->access_token)) {
-  $access_token = $response->access_token;
-  echo $access_token;
-} else {
-  die("Invalid response from server");
-}
-
+echo $result;
+//$result = json_decode($result);
+//$access_token = $result->access_token;
 curl_close($curl);
 
 ?> 
